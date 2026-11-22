@@ -1,0 +1,32 @@
+{
+ "version": "v2",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v2",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nstock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock[item])\n```\n\nError message: KeyError: 'mango'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"KeyError\",\n  \"root_cause\": \"The code tries to access the key 'mango' in the dictionary, but that key does not exist.\",\n  \"fixed_code\": \"stock = {\\\"apple\\\": 5, \\\"banana\\\": 0}\\nitem = \\\"mango\\\"\\nprint(\\\"Stock left:\\\", stock.get(item, \\\"Item not found\\\"))\",\n  \"explanation\": \"A KeyError occurs when you try to look up a key that isn't inside your dictionary. I used the .get() method, which is a safer way to access values because it returns a default value instead of crashing if the key is missing. Now, if the item isn't in your inventory, the program will tell you it's not found rather than stopping with an error.\",\n  \"steps\": [\n    \"Check if the key you are trying to access actually exists in the dictionary.\",\n    \"Use the .get() method to provide a fallback value for missing keys.\",\n    \"Use 'if key in dictionary:' to verify the existence of a key before accessing it.\"\n  ],\n  \"tip\": \"Always use the .get() method when you are unsure if a key exists in your dictionary.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.56,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "KeyError",
+  "root_cause": "The code tries to access the key 'mango' in the dictionary, but that key does not exist.",
+  "fixed_code": "stock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock.get(item, \"Item not found\"))",
+  "explanation": "A KeyError occurs when you try to look up a key that isn't inside your dictionary. I used the .get() method, which is a safer way to access values because it returns a default value instead of crashing if the key is missing. Now, if the item isn't in your inventory, the program will tell you it's not found rather than stopping with an error.",
+  "steps": [
+   "Check if the key you are trying to access actually exists in the dictionary.",
+   "Use the .get() method to provide a fallback value for missing keys.",
+   "Use 'if key in dictionary:' to verify the existence of a key before accessing it."
+  ],
+  "tip": "Always use the .get() method when you are unsure if a key exists in your dictionary.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.56,
+ "test_id": 5
+}

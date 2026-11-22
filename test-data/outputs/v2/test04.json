@@ -1,0 +1,32 @@
+{
+ "version": "v2",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v2",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef average(values):\n    return sum(values) / len(values)\n\nmarks = []\nprint(\"Average:\", average(marks))\n```\n\nError message: ZeroDivisionError: division by zero",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"ZeroDivisionError\",\n  \"root_cause\": \"The code tries to divide the sum of an empty list by its length, which is zero.\",\n  \"fixed_code\": \"def average(values):\\n    if not values:\\n        return 0\\n    return sum(values) / len(values)\\n\\nmarks = []\\nprint(\\\"Average:\\\", average(marks))\",\n  \"explanation\": \"When the list 'values' is empty, 'len(values)' returns 0, and dividing any number by zero causes a crash. I added a check to see if the list is empty before performing the division. If it is empty, the function now returns 0 instead of trying to calculate an average.\",\n  \"steps\": [\n    \"Check if your input list could be empty before performing calculations.\",\n    \"Use an 'if' statement to handle empty collections gracefully.\",\n    \"Add a print statement to check the length of your list if you are unsure of its size.\"\n  ],\n  \"tip\": \"Always check for empty collections before using functions like sum() or len() to perform division.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 6.23,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "ZeroDivisionError",
+  "root_cause": "The code tries to divide the sum of an empty list by its length, which is zero.",
+  "fixed_code": "def average(values):\n    if not values:\n        return 0\n    return sum(values) / len(values)\n\nmarks = []\nprint(\"Average:\", average(marks))",
+  "explanation": "When the list 'values' is empty, 'len(values)' returns 0, and dividing any number by zero causes a crash. I added a check to see if the list is empty before performing the division. If it is empty, the function now returns 0 instead of trying to calculate an average.",
+  "steps": [
+   "Check if your input list could be empty before performing calculations.",
+   "Use an 'if' statement to handle empty collections gracefully.",
+   "Add a print statement to check the length of your list if you are unsure of its size."
+  ],
+  "tip": "Always check for empty collections before using functions like sum() or len() to perform division.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 6.23,
+ "test_id": 4
+}

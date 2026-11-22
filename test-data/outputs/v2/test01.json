@@ -1,0 +1,32 @@
+{
+ "version": "v2",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v2",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nnumbers = [10, 20, 30]\nprint(numbers[3])\n```\n\nError message: IndexError: list index out of range",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"IndexError\",\n  \"root_cause\": \"The list index starts at 0, so the index 3 refers to a fourth item that does not exist in a list of three elements.\",\n  \"fixed_code\": \"numbers = [10, 20, 30]\\nprint(numbers[2])\",\n  \"explanation\": \"In Python, lists use zero-based indexing, meaning the first item is at index 0 and the last item in this list is at index 2. By trying to access index 3, you requested an item that isn't there. I changed the index to 2 so it correctly points to the last number, 30.\",\n  \"steps\": [\n    \"Check the length of your list using the len() function.\",\n    \"Remember that the last index is always one less than the length of the list.\",\n    \"Print the list before accessing it to verify which indexes are available.\"\n  ],\n  \"tip\": \"Always remember that Python lists count starting from zero, not one.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.93,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "IndexError",
+  "root_cause": "The list index starts at 0, so the index 3 refers to a fourth item that does not exist in a list of three elements.",
+  "fixed_code": "numbers = [10, 20, 30]\nprint(numbers[2])",
+  "explanation": "In Python, lists use zero-based indexing, meaning the first item is at index 0 and the last item in this list is at index 2. By trying to access index 3, you requested an item that isn't there. I changed the index to 2 so it correctly points to the last number, 30.",
+  "steps": [
+   "Check the length of your list using the len() function.",
+   "Remember that the last index is always one less than the length of the list.",
+   "Print the list before accessing it to verify which indexes are available."
+  ],
+  "tip": "Always remember that Python lists count starting from zero, not one.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.93,
+ "test_id": 1
+}

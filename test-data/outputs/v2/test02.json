@@ -1,0 +1,32 @@
+{
+ "version": "v2",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v2",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\ntotal = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", totl)\n```\n\nError message: NameError: name 'totl' is not defined",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"NameError\",\n  \"root_cause\": \"The variable 'totl' was used in the print statement, but the variable defined earlier was named 'total'.\",\n  \"fixed_code\": \"total = 0\\nfor price in [120, 80, 50]:\\n    total = total + price\\nprint(\\\"Total:\\\", total)\",\n  \"explanation\": \"You created a variable called 'total' to keep track of your sum, but accidentally typed 'totl' inside the print function. Python treats 'totl' as a completely new variable that hasn't been given a value yet. I updated the print statement to use the correct variable name 'total' so it can display your calculated sum.\",\n  \"steps\": [\n    \"Check the spelling of your variable name where it was defined.\",\n    \"Compare the spelling of that variable to everywhere else it is used in your code.\",\n    \"Look at the error message to see which line number and variable name are causing the issue.\"\n  ],\n  \"tip\": \"If you are using an IDE or code editor, look for auto-complete suggestions to help ensure you use the exact same variable name every time.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 4.47,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "NameError",
+  "root_cause": "The variable 'totl' was used in the print statement, but the variable defined earlier was named 'total'.",
+  "fixed_code": "total = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", total)",
+  "explanation": "You created a variable called 'total' to keep track of your sum, but accidentally typed 'totl' inside the print function. Python treats 'totl' as a completely new variable that hasn't been given a value yet. I updated the print statement to use the correct variable name 'total' so it can display your calculated sum.",
+  "steps": [
+   "Check the spelling of your variable name where it was defined.",
+   "Compare the spelling of that variable to everywhere else it is used in your code.",
+   "Look at the error message to see which line number and variable name are causing the issue."
+  ],
+  "tip": "If you are using an IDE or code editor, look for auto-complete suggestions to help ensure you use the exact same variable name every time.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 4.47,
+ "test_id": 2
+}

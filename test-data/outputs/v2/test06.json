@@ -1,0 +1,32 @@
+{
+ "version": "v2",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v2",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef greet(name)\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")\n```\n\nError message: SyntaxError: expected ':'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"SyntaxError\",\n  \"root_cause\": \"The function definition is missing a colon at the end of the line.\",\n  \"fixed_code\": \"def greet(name):\\n    print(\\\"Hello, \\\" + name)\\n\\ngreet(\\\"Anuj\\\")\",\n  \"explanation\": \"In Python, you must place a colon at the end of function definitions, loops, and conditional statements. This tells the computer that a block of indented code is about to follow. I added the missing colon to the end of the first line to fix the error.\",\n  \"steps\": [\n    \"Check if your function or loop definition ends with a colon.\",\n    \"Look at the line number mentioned in the error message.\",\n    \"Read your code aloud to see if it follows Python's structure rules.\"\n  ],\n  \"tip\": \"Always double-check that your function and control flow headers end with a colon before starting the indented block.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.64,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "SyntaxError",
+  "root_cause": "The function definition is missing a colon at the end of the line.",
+  "fixed_code": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")",
+  "explanation": "In Python, you must place a colon at the end of function definitions, loops, and conditional statements. This tells the computer that a block of indented code is about to follow. I added the missing colon to the end of the first line to fix the error.",
+  "steps": [
+   "Check if your function or loop definition ends with a colon.",
+   "Look at the line number mentioned in the error message.",
+   "Read your code aloud to see if it follows Python's structure rules."
+  ],
+  "tip": "Always double-check that your function and control flow headers end with a colon before starting the indented block.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.64,
+ "test_id": 6
+}

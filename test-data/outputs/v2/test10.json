@@ -1,0 +1,32 @@
+{
+ "version": "v2",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v2",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef is_even(n):\n    return n % 2 == 1\n\nprint(is_even(4))\n```\n\nError message: No error message. is_even(4) prints False but it should print True.",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"LogicError\",\n  \"root_cause\": \"The condition checks if the remainder is 1, which identifies odd numbers instead of even numbers.\",\n  \"fixed_code\": \"def is_even(n):\\n    return n % 2 == 0\\n\\nprint(is_even(4))\",\n  \"explanation\": \"In programming, the modulo operator (%) gives you the remainder of a division. When you divide an even number by 2, the remainder is always 0. I changed your code to check for a remainder of 0 so that it correctly identifies even numbers.\",\n  \"steps\": [\n    \"Identify what the mathematical condition for your goal is.\",\n    \"Use a print statement inside the function to see what n % 2 actually returns.\",\n    \"Compare that output against your expected result.\"\n  ],\n  \"tip\": \"Always test your function with both expected 'true' and 'false' cases to ensure your logic is sound.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 2.13,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "LogicError",
+  "root_cause": "The condition checks if the remainder is 1, which identifies odd numbers instead of even numbers.",
+  "fixed_code": "def is_even(n):\n    return n % 2 == 0\n\nprint(is_even(4))",
+  "explanation": "In programming, the modulo operator (%) gives you the remainder of a division. When you divide an even number by 2, the remainder is always 0. I changed your code to check for a remainder of 0 so that it correctly identifies even numbers.",
+  "steps": [
+   "Identify what the mathematical condition for your goal is.",
+   "Use a print statement inside the function to see what n % 2 actually returns.",
+   "Compare that output against your expected result."
+  ],
+  "tip": "Always test your function with both expected 'true' and 'false' cases to ensure your logic is sound.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 2.13,
+ "test_id": 10
+}

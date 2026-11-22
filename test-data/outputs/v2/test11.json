@@ -1,0 +1,31 @@
+{
+ "version": "v2",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v2",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nimport os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\nprint(headers[\"Authorisation\"])\n```\n\nError message: KeyError: 'Authorisation'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"KeyError\",\n  \"root_cause\": \"The dictionary key 'Authorisation' is spelled with an 's', but the dictionary was defined using 'Authorization' with a 'z'.\",\n  \"fixed_code\": \"import os\\nAPI_KEY = \\\"FAKE-API-KEY-1234567890\\\"\\nheaders = {\\\"Authorization\\\": \\\"Bearer \\\" + API_KEY}\\nprint(headers[\\\"Authorization\\\"])\",\n  \"explanation\": \"In Python, dictionaries are case-sensitive and spelling-sensitive. Because you defined the key with a 'z', looking it up with an 's' tells Python that the key does not exist. I corrected the spelling to match the definition.\",\n  \"steps\": [\n    \"Check the exact spelling and capitalization of the key in your dictionary definition.\",\n    \"Use print(headers.keys()) to see exactly what keys are available in your dictionary.\",\n    \"Ensure your access attempt matches the definition letter-for-letter.\"\n  ],\n  \"tip\": \"When working with dictionary keys, copy and paste the key name from the definition to the lookup line to ensure they match perfectly.\"\n}",
+   "latency_s": 1.57,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "KeyError",
+  "root_cause": "The dictionary key 'Authorisation' is spelled with an 's', but the dictionary was defined using 'Authorization' with a 'z'.",
+  "fixed_code": "import os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\nprint(headers[\"Authorization\"])",
+  "explanation": "In Python, dictionaries are case-sensitive and spelling-sensitive. Because you defined the key with a 'z', looking it up with an 's' tells Python that the key does not exist. I corrected the spelling to match the definition.",
+  "steps": [
+   "Check the exact spelling and capitalization of the key in your dictionary definition.",
+   "Use print(headers.keys()) to see exactly what keys are available in your dictionary.",
+   "Ensure your access attempt matches the definition letter-for-letter."
+  ],
+  "tip": "When working with dictionary keys, copy and paste the key name from the definition to the lookup line to ensure they match perfectly."
+ },
+ "json_ok": true,
+ "total_latency_s": 1.57,
+ "test_id": 11
+}
