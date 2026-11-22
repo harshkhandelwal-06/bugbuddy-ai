@@ -1,0 +1,4 @@
+- v1 (free text): in test 11 it repeated the fake API key in its answer, and in test 13 (code missing) it wrote a long generic answer with an example instead of asking for the code.
+- v2 (JSON): all 14 replies were valid JSON and both invalid inputs were declined, but the fake API key was still copied into the fixed code in test 11.
+- v3 and v4 (secret rule added): all 14 tests passed. No reply in v2, v3 or v4 was wrapped in markdown fences.
+- v3 and v4 tied at 14/14, so on this small and fairly easy test set the split into two prompts did not raise the pass count. Its benefits (a separate diagnosis and an input guard) come from the design; these 14 tests cannot separate the two versions.
