@@ -1,0 +1,86 @@
+{
+  "team_id": "PE-B65-08",
+  "team_name": "404 not found",
+  "team_file_name": "404NotFound",
+  "project_title": "BugBuddy AI - Bug Explanation and Fix Assistant",
+  "project_short": "BugBuddyAI",
+  "batch": "B65-80 (batches 76, 71)",
+  "faculty": "Dr. Sonal Kukreja",
+  "links": {
+    "prototype": "https://bugbuddy-ai.streamlit.app/",
+    "repo": "https://github.com/harshkhandelwal-06/bugbuddy-ai",
+    "reel": "TO_FILL"
+  },
+  "reel_seconds": "TO_FILL",
+  "contribution_confirmed": true,
+  "members": [
+    {
+      "name": "Harsh Khandelwal",
+      "enrollment": "S24CSEU1988",
+      "role": "Team leader, prompt design and app",
+      "tasks": "Designed P1 and P2 and prompt versions v1-v4; built pipeline and Streamlit app; deployed prototype",
+      "evidence": "prompts/final/P1_diagnose.txt, prompts/final/P2_fix_explain.txt, code/app.py, code/bugbuddy/pipeline.py",
+      "pct": 34
+    },
+    {
+      "name": "Anuj Gupta",
+      "enrollment": "S24CSEU1990",
+      "role": "Testing and iteration log",
+      "tasks": "Wrote the 14 test inputs, ran code/run_tests.py on all versions, recorded results and screenshots",
+      "evidence": "test-data/tests.json, test-data/results.md, docs/screenshots/",
+      "pct": 33
+    },
+    {
+      "name": "Gokarn Nath Mishra",
+      "enrollment": "S24CSEU2634",
+      "role": "Documentation, diagrams and reel",
+      "tasks": "Made the 4 diagrams, Business Model Canvas and Milestone 2 PDF; recorded and edited the reel",
+      "evidence": "docs/diagrams/, docs/404NotFound_BMC.pdf, reel link",
+      "pct": 33
+    }
+  ],
+  "modules": [
+    {
+      "name": "Input form and sample picker",
+      "does": "Streamlit form for language, code and error; loads sample bugs",
+      "status": "Working",
+      "notes": "Checked with an automated UI test (tests/test_app.py) and in the browser"
+    },
+    {
+      "name": "Prompt loader and template filler",
+      "does": "Reads prompts/*.txt and fills {language}, {code}, {error}, {diagnosis}",
+      "status": "Working",
+      "notes": "Unit tested (tests/test_pipeline.py)"
+    },
+    {
+      "name": "LLM adapter",
+      "does": "Calls Gemini, Claude or any OpenAI-compatible API with retries",
+      "status": "LIVE",
+      "notes": "Working only after a real call succeeds"
+    },
+    {
+      "name": "P1 Input check and diagnosis",
+      "does": "Detects missing/non-code input; finds error type, cause, location",
+      "status": "LIVE",
+      "notes": ""
+    },
+    {
+      "name": "P2 Fix and explanation",
+      "does": "Writes corrected code, simple explanation, steps and tip",
+      "status": "LIVE",
+      "notes": ""
+    },
+    {
+      "name": "Result display",
+      "does": "Shows cause, fixed code, explanation, steps, tip, or what is missing",
+      "status": "Working",
+      "notes": "Checked with an automated UI test"
+    },
+    {
+      "name": "Test runner and checker",
+      "does": "Runs 14 tests on v1-v4, executes the fixed code, scores Pass/Fail",
+      "status": "Working",
+      "notes": "Checker validated: every original test code fails, reference fixes pass"
+    }
+  ]
+}
