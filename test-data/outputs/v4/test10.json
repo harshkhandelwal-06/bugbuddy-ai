@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef is_even(n):\n    return n % 2 == 1\n\nprint(is_even(4))\n```\n\nError message: No error message. is_even(4) prints False but it should print True.",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"LogicError\",\n  \"root_cause\": \"The function checks if the remainder is 1, which identifies odd numbers instead of even numbers.\",\n  \"location\": \"line 2\",\n  \"bugs_found\": 1,\n  \"other_bugs\": [],\n  \"contains_secret\": false,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.13,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef is_even(n):\n    return n % 2 == 1\n\nprint(is_even(4))\n```\n\nError message: No error message. is_even(4) prints False but it should print True.\n\nDiagnosis: {\"error_type\": \"LogicError\", \"root_cause\": \"The function checks if the remainder is 1, which identifies odd numbers instead of even numbers.\", \"location\": \"line 2\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"def is_even(n):\\n    return n % 2 == 0\\n\\nprint(is_even(4))\",\n  \"explanation\": \"The modulo operator [%] calculates the remainder of a division. Since even numbers divided by 2 have a remainder of 0, I changed the 1 to a 0 to correctly identify them.\",\n  \"steps\": [\n    \"Identify what the math operation should return for your specific case.\",\n    \"Use a print statement to check the result of the calculation before returning it.\",\n    \"Compare your expected result with the actual output to spot logic errors.\"\n  ],\n  \"tip\": \"When working with remainders, test your code with both even and odd numbers to ensure the logic holds for both cases.\"\n}",
+   "latency_s": 1.81,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "LogicError",
+  "root_cause": "The function checks if the remainder is 1, which identifies odd numbers instead of even numbers.",
+  "location": "line 2",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "def is_even(n):\n    return n % 2 == 0\n\nprint(is_even(4))",
+  "explanation": "The modulo operator [%] calculates the remainder of a division. Since even numbers divided by 2 have a remainder of 0, I changed the 1 to a 0 to correctly identify them.",
+  "steps": [
+   "Identify what the math operation should return for your specific case.",
+   "Use a print statement to check the result of the calculation before returning it.",
+   "Compare your expected result with the actual output to spot logic errors."
+  ],
+  "tip": "When working with remainders, test your code with both even and odd numbers to ensure the logic holds for both cases."
+ },
+ "json_ok": true,
+ "total_latency_s": 2.94,
+ "test_id": 10
+}

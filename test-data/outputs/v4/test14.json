@@ -1,0 +1,28 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\nHow do I make the best paneer butter masala for 4 people?\n```\n\nError message: (none given)",
+   "raw": "{\"status\": \"not_code\", \"error_type\": \"\", \"root_cause\": \"\", \"location\": \"\", \"bugs_found\": 0, \"other_bugs\": [], \"contains_secret\": false, \"missing_info\": \"The input provided is a cooking question, not a programming code snippet.\"}",
+   "latency_s": 0.98,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "not_code",
+  "error_type": "",
+  "root_cause": "",
+  "location": "",
+  "bugs_found": 0,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "The input provided is a cooking question, not a programming code snippet."
+ },
+ "json_ok": true,
+ "total_latency_s": 0.98,
+ "test_id": 14
+}

@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\ntotal = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", totl)\n```\n\nError message: NameError: name 'totl' is not defined",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"NameError\",\n  \"root_cause\": \"The variable 'totl' is used in the print statement, but it was never defined; the intended variable is 'total'.\",\n  \"location\": \"line 4\",\n  \"bugs_found\": 1,\n  \"other_bugs\": [],\n  \"contains_secret\": false,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.3,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ntotal = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", totl)\n```\n\nError message: NameError: name 'totl' is not defined\n\nDiagnosis: {\"error_type\": \"NameError\", \"root_cause\": \"The variable 'totl' is used in the print statement, but it was never defined; the intended variable is 'total'.\", \"location\": \"line 4\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"total = 0\\nfor price in [120, 80, 50]:\\n    total = total + price\\nprint(\\\"Total:\\\", total)\",\n  \"explanation\": \"You had a typo in your print statement where you wrote 'totl' instead of 'total'. Python treats these as two different names, and since 'totl' was never created, it threw a [NameError]. I corrected the spelling to match the variable you defined at the start.\",\n  \"steps\": [\n    \"Look at the line number mentioned in the error message.\",\n    \"Check if the variable name is spelled exactly the same as where you first defined it.\",\n    \"Use your editor's autocomplete feature to avoid typing mistakes.\"\n  ],\n  \"tip\": \"Double-check your variable names if you see a NameError, as even a single missing letter makes Python think it is a completely different variable.\"\n}",
+   "latency_s": 1.42,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "NameError",
+  "root_cause": "The variable 'totl' is used in the print statement, but it was never defined; the intended variable is 'total'.",
+  "location": "line 4",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "total = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", total)",
+  "explanation": "You had a typo in your print statement where you wrote 'totl' instead of 'total'. Python treats these as two different names, and since 'totl' was never created, it threw a [NameError]. I corrected the spelling to match the variable you defined at the start.",
+  "steps": [
+   "Look at the line number mentioned in the error message.",
+   "Check if the variable name is spelled exactly the same as where you first defined it.",
+   "Use your editor's autocomplete feature to avoid typing mistakes."
+  ],
+  "tip": "Double-check your variable names if you see a NameError, as even a single missing letter makes Python think it is a completely different variable."
+ },
+ "json_ok": true,
+ "total_latency_s": 2.72,
+ "test_id": 2
+}

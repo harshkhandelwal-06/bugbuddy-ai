@@ -1,0 +1,47 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef total_cost(prices, tax):\n    total = sum(prices)\n    return totl + total * tax\n\ncart = [100, 250, \"50\"]\nprint(total_cost(cart, 0.1))\n```\n\nError message: NameError: name 'totl' is not defined",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"NameError\",\n  \"root_cause\": \"There is a typo in the variable name 'totl' inside the return statement, which should be 'total'.\",\n  \"location\": \"line 3\",\n  \"bugs_found\": 2,\n  \"other_bugs\": [\n    \"The list 'cart' contains a string '50', which will cause a TypeError when passed to the sum() function.\"\n  ],\n  \"contains_secret\": false,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 0.94,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef total_cost(prices, tax):\n    total = sum(prices)\n    return totl + total * tax\n\ncart = [100, 250, \"50\"]\nprint(total_cost(cart, 0.1))\n```\n\nError message: NameError: name 'totl' is not defined\n\nDiagnosis: {\"error_type\": \"NameError\", \"root_cause\": \"There is a typo in the variable name 'totl' inside the return statement, which should be 'total'.\", \"location\": \"line 3\", \"bugs_found\": 2, \"other_bugs\": [\"The list 'cart' contains a string '50', which will cause a TypeError when passed to the sum() function.\"], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"def total_cost(prices, tax):\\n    total = sum(prices)\\n    return total + total * tax\\n\\ncart = [100, 250, 50]\\nprint(total_cost(cart, 0.1))\",\n  \"explanation\": \"The code had a typo where 'totl' was used instead of 'total', causing a [NameError]. Additionally, the list contained a string '50' instead of a number, which prevents the [sum] function from adding the values together correctly.\",\n  \"steps\": [\n    \"Check for typos if you see a NameError.\",\n    \"Ensure all items in a list are the same data type, like integers or floats, before doing math.\",\n    \"Use print() statements to check the contents of your variables if the code behaves unexpectedly.\"\n  ],\n  \"tip\": \"Always double-check that your variable names are spelled exactly the same way every time you use them.\"\n}",
+   "latency_s": 1.69,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "NameError",
+  "root_cause": "There is a typo in the variable name 'totl' inside the return statement, which should be 'total'.",
+  "location": "line 3",
+  "bugs_found": 2,
+  "other_bugs": [
+   "The list 'cart' contains a string '50', which will cause a TypeError when passed to the sum() function."
+  ],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "def total_cost(prices, tax):\n    total = sum(prices)\n    return total + total * tax\n\ncart = [100, 250, 50]\nprint(total_cost(cart, 0.1))",
+  "explanation": "The code had a typo where 'totl' was used instead of 'total', causing a [NameError]. Additionally, the list contained a string '50' instead of a number, which prevents the [sum] function from adding the values together correctly.",
+  "steps": [
+   "Check for typos if you see a NameError.",
+   "Ensure all items in a list are the same data type, like integers or floats, before doing math.",
+   "Use print() statements to check the contents of your variables if the code behaves unexpectedly."
+  ],
+  "tip": "Always double-check that your variable names are spelled exactly the same way every time you use them."
+ },
+ "json_ok": true,
+ "total_latency_s": 2.63,
+ "test_id": 9
+}

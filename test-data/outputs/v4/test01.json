@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\nnumbers = [10, 20, 30]\nprint(numbers[3])\n```\n\nError message: IndexError: list index out of range",
+   "raw": "{\n\"status\": \"ok\",\n\"error_type\": \"IndexError\",\n\"root_cause\": \"The list has 3 items at indices 0, 1, and 2. Accessing index 3 is out of bounds.\",\n\"location\": \"line 2\",\n\"bugs_found\": 1,\n\"other_bugs\": [],\n\"contains_secret\": false,\n\"missing_info\": \"\"\n}",
+   "latency_s": 1.82,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\nnumbers = [10, 20, 30]\nprint(numbers[3])\n```\n\nError message: IndexError: list index out of range\n\nDiagnosis: {\"error_type\": \"IndexError\", \"root_cause\": \"The list has 3 items at indices 0, 1, and 2. Accessing index 3 is out of bounds.\", \"location\": \"line 2\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"numbers = [10, 20, 30]\\nprint(numbers[2])\",\n  \"explanation\": \"In Python, lists use zero-based indexing, meaning the first item is at 0 and the last item is at 2. Because your list only has three items, index 3 is 'out of bounds' [outside the available range]. I changed the index to 2 so it correctly points to the last item in the list.\",\n  \"steps\": [\n    \"Check the length of your list using len(numbers).\",\n    \"Remember that the highest index is always one less than the total number of items.\",\n    \"Use print() to inspect your list if you are unsure about its contents.\"\n  ],\n  \"tip\": \"Always remember that list indices start at 0, not 1.\"\n}",
+   "latency_s": 1.97,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "IndexError",
+  "root_cause": "The list has 3 items at indices 0, 1, and 2. Accessing index 3 is out of bounds.",
+  "location": "line 2",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "numbers = [10, 20, 30]\nprint(numbers[2])",
+  "explanation": "In Python, lists use zero-based indexing, meaning the first item is at 0 and the last item is at 2. Because your list only has three items, index 3 is 'out of bounds' [outside the available range]. I changed the index to 2 so it correctly points to the last item in the list.",
+  "steps": [
+   "Check the length of your list using len(numbers).",
+   "Remember that the highest index is always one less than the total number of items.",
+   "Use print() to inspect your list if you are unsure about its contents."
+  ],
+  "tip": "Always remember that list indices start at 0, not 1."
+ },
+ "json_ok": true,
+ "total_latency_s": 3.79,
+ "test_id": 1
+}

@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef greet(name)\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")\n```\n\nError message: SyntaxError: expected ':'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"SyntaxError\",\n  \"root_cause\": \"The function definition is missing a colon at the end of the header line.\",\n  \"location\": \"line 1\",\n  \"bugs_found\": 1,\n  \"other_bugs\": [],\n  \"contains_secret\": false,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.2,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef greet(name)\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")\n```\n\nError message: SyntaxError: expected ':'\n\nDiagnosis: {\"error_type\": \"SyntaxError\", \"root_cause\": \"The function definition is missing a colon at the end of the header line.\", \"location\": \"line 1\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"def greet(name):\\n    print(\\\"Hello, \\\" + name)\\n\\ngreet(\\\"Anuj\\\")\",\n  \"explanation\": \"In Python, you must end a function definition header with a colon [:] to tell the computer that the function's code block is about to start. I added the missing colon to the end of the first line. This tells Python that the indented lines below belong to the 'greet' function.\",\n  \"steps\": [\n    \"Look at the line number mentioned in the error message.\",\n    \"Check if your function or loop header ends with a colon.\",\n    \"Ensure the code inside the function is indented correctly.\"\n  ],\n  \"tip\": \"Always double-check that your 'def', 'if', 'for', and 'while' lines end with a colon before starting a new indented block.\"\n}",
+   "latency_s": 1.47,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "SyntaxError",
+  "root_cause": "The function definition is missing a colon at the end of the header line.",
+  "location": "line 1",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")",
+  "explanation": "In Python, you must end a function definition header with a colon [:] to tell the computer that the function's code block is about to start. I added the missing colon to the end of the first line. This tells Python that the indented lines below belong to the 'greet' function.",
+  "steps": [
+   "Look at the line number mentioned in the error message.",
+   "Check if your function or loop header ends with a colon.",
+   "Ensure the code inside the function is indented correctly."
+  ],
+  "tip": "Always double-check that your 'def', 'if', 'for', and 'while' lines end with a colon before starting a new indented block."
+ },
+ "json_ok": true,
+ "total_latency_s": 2.67,
+ "test_id": 6
+}

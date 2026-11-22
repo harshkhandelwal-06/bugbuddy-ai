@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\nstock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock[item])\n```\n\nError message: KeyError: 'mango'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"KeyError\",\n  \"root_cause\": \"The code attempts to access a key 'mango' that does not exist in the 'stock' dictionary.\",\n  \"location\": \"line 3\",\n  \"bugs_found\": 1,\n  \"other_bugs\": [],\n  \"contains_secret\": false,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.31,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\nstock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock[item])\n```\n\nError message: KeyError: 'mango'\n\nDiagnosis: {\"error_type\": \"KeyError\", \"root_cause\": \"The code attempts to access a key 'mango' that does not exist in the 'stock' dictionary.\", \"location\": \"line 3\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"stock = {\\\"apple\\\": 5, \\\"banana\\\": 0}\\nitem = \\\"mango\\\"\\nprint(\\\"Stock left:\\\", stock.get(item, \\\"Not in stock\\\"))\",\n  \"explanation\": \"A KeyError happens when you try to look up a key that isn't in your dictionary [a collection of key-value pairs]. I replaced the direct access with the .get() method, which safely returns a default value instead of crashing if the key is missing.\",\n  \"steps\": [\n    \"Check if the key you are looking for is actually defined in your dictionary.\",\n    \"Use the .get() method instead of square brackets if you aren't sure the key exists.\",\n    \"Print the dictionary before accessing it to see what keys are available.\"\n  ],\n  \"tip\": \"Use dictionary.get(key, default_value) to handle missing keys gracefully without stopping your program.\"\n}",
+   "latency_s": 1.7,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "KeyError",
+  "root_cause": "The code attempts to access a key 'mango' that does not exist in the 'stock' dictionary.",
+  "location": "line 3",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "stock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock.get(item, \"Not in stock\"))",
+  "explanation": "A KeyError happens when you try to look up a key that isn't in your dictionary [a collection of key-value pairs]. I replaced the direct access with the .get() method, which safely returns a default value instead of crashing if the key is missing.",
+  "steps": [
+   "Check if the key you are looking for is actually defined in your dictionary.",
+   "Use the .get() method instead of square brackets if you aren't sure the key exists.",
+   "Print the dictionary before accessing it to see what keys are available."
+  ],
+  "tip": "Use dictionary.get(key, default_value) to handle missing keys gracefully without stopping your program."
+ },
+ "json_ok": true,
+ "total_latency_s": 3.01,
+ "test_id": 5
+}

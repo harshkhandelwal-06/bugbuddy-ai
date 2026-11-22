@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef average(values):\n    return sum(values) / len(values)\n\nmarks = []\nprint(\"Average:\", average(marks))\n```\n\nError message: ZeroDivisionError: division by zero",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"ZeroDivisionError\",\n  \"root_cause\": \"The function attempts to divide by the length of the list, which is zero when the list is empty.\",\n  \"location\": \"line 2\",\n  \"bugs_found\": 1,\n  \"other_bugs\": [],\n  \"contains_secret\": false,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 3.22,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef average(values):\n    return sum(values) / len(values)\n\nmarks = []\nprint(\"Average:\", average(marks))\n```\n\nError message: ZeroDivisionError: division by zero\n\nDiagnosis: {\"error_type\": \"ZeroDivisionError\", \"root_cause\": \"The function attempts to divide by the length of the list, which is zero when the list is empty.\", \"location\": \"line 2\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"def average(values):\\n    if not values:\\n        return 0\\n    return sum(values) / len(values)\\n\\nmarks = []\\nprint(\\\"Average:\\\", average(marks))\",\n  \"explanation\": \"The error happened because you cannot divide by zero when the list is empty. I added an [if statement] to check if the list has items before doing the math. If the list is empty, the function now returns 0 instead of trying to divide.\",\n  \"steps\": [\n    \"Check if your list is empty before performing calculations.\",\n    \"Use an if statement to handle the empty case separately.\",\n    \"Test your code with an empty input to see if it crashes.\"\n  ],\n  \"tip\": \"Always consider 'edge cases' like empty lists or zero values when writing functions that perform division.\"\n}",
+   "latency_s": 1.47,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "ZeroDivisionError",
+  "root_cause": "The function attempts to divide by the length of the list, which is zero when the list is empty.",
+  "location": "line 2",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "def average(values):\n    if not values:\n        return 0\n    return sum(values) / len(values)\n\nmarks = []\nprint(\"Average:\", average(marks))",
+  "explanation": "The error happened because you cannot divide by zero when the list is empty. I added an [if statement] to check if the list has items before doing the math. If the list is empty, the function now returns 0 instead of trying to divide.",
+  "steps": [
+   "Check if your list is empty before performing calculations.",
+   "Use an if statement to handle the empty case separately.",
+   "Test your code with an empty input to see if it crashes."
+  ],
+  "tip": "Always consider 'edge cases' like empty lists or zero values when writing functions that perform division."
+ },
+ "json_ok": true,
+ "total_latency_s": 4.69,
+ "test_id": 4
+}

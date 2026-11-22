@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\nname = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + score)\n```\n\nError message: TypeError: can only concatenate str (not \"int\") to str",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"TypeError\",\n  \"root_cause\": \"The code attempts to concatenate a string with an integer directly using the '+' operator, which is not allowed in Python.\",\n  \"location\": \"line 3\",\n  \"bugs_found\": 1,\n  \"other_bugs\": [],\n  \"contains_secret\": false,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.73,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\nname = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + score)\n```\n\nError message: TypeError: can only concatenate str (not \"int\") to str\n\nDiagnosis: {\"error_type\": \"TypeError\", \"root_cause\": \"The code attempts to concatenate a string with an integer directly using the '+' operator, which is not allowed in Python.\", \"location\": \"line 3\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": false}",
+   "raw": "{\n  \"fixed_code\": \"name = \\\"Riya\\\"\\nscore = 95\\nprint(\\\"Student \\\" + name + \\\" scored \\\" + str(score))\",\n  \"explanation\": \"Python does not allow you to join [concatenate] text strings and numbers directly using the plus sign. I used the str() function to convert the number 95 into a string so that it can be combined with the other text.\",\n  \"steps\": [\n    \"Look at the error message to see which data types are causing the conflict.\",\n    \"Identify which variable is a number and which is a string.\",\n    \"Use str() to turn the number into text before joining it.\"\n  ],\n  \"tip\": \"When printing mixed data, consider using f-strings like f'Student {name} scored {score}' to avoid manual conversion.\"\n}",
+   "latency_s": 6.51,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "TypeError",
+  "root_cause": "The code attempts to concatenate a string with an integer directly using the '+' operator, which is not allowed in Python.",
+  "location": "line 3",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": false,
+  "missing_info": "",
+  "fixed_code": "name = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + str(score))",
+  "explanation": "Python does not allow you to join [concatenate] text strings and numbers directly using the plus sign. I used the str() function to convert the number 95 into a string so that it can be combined with the other text.",
+  "steps": [
+   "Look at the error message to see which data types are causing the conflict.",
+   "Identify which variable is a number and which is a string.",
+   "Use str() to turn the number into text before joining it."
+  ],
+  "tip": "When printing mixed data, consider using f-strings like f'Student {name} scored {score}' to avoid manual conversion."
+ },
+ "json_ok": true,
+ "total_latency_s": 8.24,
+ "test_id": 3
+}

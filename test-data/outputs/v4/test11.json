@@ -1,0 +1,45 @@
+{
+ "version": "v4",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "P1",
+   "temperature": 0.0,
+   "user_prompt": "Language: Python\n\nCode:\n```\nimport os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\nprint(headers[\"Authorisation\"])\n```\n\nError message: KeyError: 'Authorisation'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"KeyError\",\n  \"root_cause\": \"The dictionary key 'Authorisation' is misspelled and does not match the key 'Authorization' defined in the dictionary.\",\n  \"location\": \"line 4\",\n  \"bugs_found\": 1,\n  \"other_bugs\": [],\n  \"contains_secret\": true,\n  \"missing_info\": \"\"\n}",
+   "latency_s": 2.67,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  },
+  {
+   "prompt_id": "P2",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\nimport os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\nprint(headers[\"Authorisation\"])\n```\n\nError message: KeyError: 'Authorisation'\n\nDiagnosis: {\"error_type\": \"KeyError\", \"root_cause\": \"The dictionary key 'Authorisation' is misspelled and does not match the key 'Authorization' defined in the dictionary.\", \"location\": \"line 4\", \"bugs_found\": 1, \"other_bugs\": [], \"contains_secret\": true}",
+   "raw": "{\n  \"fixed_code\": \"import os\\nAPI_KEY = \\\"YOUR_API_KEY\\\"\\nheaders = {\\\"Authorization\\\": \\\"Bearer \\\" + API_KEY}\\nprint(headers[\\\"Authorization\\\"])\",\n  \"explanation\": \"A KeyError happens when you try to access a dictionary key that doesn't exist. I corrected the spelling of 'Authorisation' to 'Authorization' to match the key defined in your dictionary. I also replaced your secret key with a placeholder to keep your credentials safe.\",\n  \"steps\": [\n    \"Check the spelling of the key you are trying to access.\",\n    \"Print the dictionary keys using headers.keys() to see exactly what is inside.\",\n    \"Ensure the key name matches the definition exactly, including capitalization.\"\n  ],\n  \"tip\": \"Never hardcode sensitive information like API keys directly in your script; use environment variables instead.\"\n}",
+   "latency_s": 2.09,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "KeyError",
+  "root_cause": "The dictionary key 'Authorisation' is misspelled and does not match the key 'Authorization' defined in the dictionary.",
+  "location": "line 4",
+  "bugs_found": 1,
+  "other_bugs": [],
+  "contains_secret": true,
+  "missing_info": "",
+  "fixed_code": "import os\nAPI_KEY = \"YOUR_API_KEY\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\nprint(headers[\"Authorization\"])",
+  "explanation": "A KeyError happens when you try to access a dictionary key that doesn't exist. I corrected the spelling of 'Authorisation' to 'Authorization' to match the key defined in your dictionary. I also replaced your secret key with a placeholder to keep your credentials safe.",
+  "steps": [
+   "Check the spelling of the key you are trying to access.",
+   "Print the dictionary keys using headers.keys() to see exactly what is inside.",
+   "Ensure the key name matches the definition exactly, including capitalization."
+  ],
+  "tip": "Never hardcode sensitive information like API keys directly in your script; use environment variables instead."
+ },
+ "json_ok": true,
+ "total_latency_s": 4.76,
+ "test_id": 11
+}
