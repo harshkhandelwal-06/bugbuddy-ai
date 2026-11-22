@@ -1,0 +1,16 @@
+digraph G { graph [fontname="Helvetica", rankdir=TB, pad=0.2, nodesep=0.35, ranksep=0.45, dpi=170]; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#EEF3FB", color="#3B5B9A", penwidth=1.2]; edge [fontname="Helvetica", fontsize=9, color="#555555"]; rankdir=LR;
+ u [label="User\n(browser)", fillcolor="#FFF4D6", color="#B8860B"];
+ subgraph cluster_app { label="BugBuddy app (code/app.py, Streamlit)"; fontname="Helvetica"; color="#3B5B9A"; style=rounded;
+  ui [label="Input form +\nsample picker + result cards"];
+  pl [label="pipeline.py\nrun P1, guard, run P2,\nparse JSON"];
+  pr [label="prompts.py\nloads prompts/final/*.txt", fillcolor="#F4F4F4"];
+  ad [label="llm.py\nprovider adapter"]; }
+ llm [label="LLM API\n(Gemini / Claude / OpenAI-compatible)", fillcolor="#E2F5E6", color="#2E7D45"];
+ sec [label="API key in Streamlit secrets\nor environment variable\n(never in the repository)", shape=note, fillcolor="#FDE2E2", color="#B03A3A"];
+ subgraph cluster_test { label="Offline testing (code/run_tests.py)"; fontname="Helvetica"; color="#888888"; style="rounded,dashed";
+  rt [label="Runner: 14 tests x\nprompt versions v1-v4", fillcolor="#F4F4F4", color="#888888"];
+  ck [label="checker.py: runs the fixed code,\nchecks output, secrets, declines", fillcolor="#F4F4F4", color="#888888"];
+  rs [label="test-data/outputs +\nresults.json", fillcolor="#F4F4F4", color="#888888"]; }
+ u -> ui -> pl; pl -> pr; pl -> ad -> llm; sec -> ad;
+ rt -> pl [style=dashed]; rt -> ck -> rs [style=dashed];
+}

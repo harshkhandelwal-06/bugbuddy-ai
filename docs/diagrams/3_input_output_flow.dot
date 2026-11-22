@@ -1,0 +1,15 @@
+digraph G { graph [fontname="Helvetica", rankdir=TB, pad=0.2, nodesep=0.35, ranksep=0.45, dpi=170]; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#EEF3FB", color="#3B5B9A", penwidth=1.2]; edge [fontname="Helvetica", fontsize=9, color="#555555"]; rankdir=LR;
+ subgraph cluster_in { label="Input"; fontname="Helvetica"; color="#B8860B"; style=rounded;
+  i1 [label="Language\n(Python, JavaScript, ...)", fillcolor="#FFF4D6", color="#B8860B"];
+  i2 [label="Code snippet", fillcolor="#FFF4D6", color="#B8860B"];
+  i3 [label="Error message or\nwrong behaviour", fillcolor="#FFF4D6", color="#B8860B"]; }
+ m [label="BugBuddy\nP1 diagnose -> P2 fix + explain", fillcolor="#DDEBFF", fontsize=12];
+ subgraph cluster_out { label="Output (JSON shown as cards)"; fontname="Helvetica"; color="#2E7D45"; style=rounded;
+  o1 [label="Cause: error_type + root_cause\n+ location + other bugs", fillcolor="#E2F5E6", color="#2E7D45"];
+  o2 [label="fixed_code", fillcolor="#E2F5E6", color="#2E7D45"];
+  o3 [label="Simple explanation", fillcolor="#E2F5E6", color="#2E7D45"];
+  o4 [label="Debugging steps + tip", fillcolor="#E2F5E6", color="#2E7D45"];
+  o5 [label="OR: what information is missing", fillcolor="#FDE2E2", color="#B03A3A"]; }
+ i1 -> m; i2 -> m; i3 -> m;
+ m -> o1; m -> o2; m -> o3; m -> o4; m -> o5;
+}

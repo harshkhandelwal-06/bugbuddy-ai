@@ -1,0 +1,15 @@
+digraph G { graph [fontname="Helvetica", rankdir=TB, pad=0.2, nodesep=0.35, ranksep=0.45, dpi=170]; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#EEF3FB", color="#3B5B9A", penwidth=1.2]; edge [fontname="Helvetica", fontsize=9, color="#555555"]; rankdir=LR;
+ root [label="Help a beginner\nfix a coding error", fillcolor="#FFF4D6", color="#B8860B"];
+ a [label="1. Check the input\n(code present? is it code?)", fillcolor="#DDEBFF"];
+ b [label="2. Diagnose\nerror type, root cause,\nlocation, other bugs", fillcolor="#DDEBFF"];
+ c [label="3. Fix\nsmallest change that makes\nthe code run", fillcolor="#DDEBFF"];
+ d [label="4. Explain\nsimple words, debugging steps,\none prevention tip", fillcolor="#DDEBFF"];
+ e [label="5. Stay safe\nnever repeat secrets,\ndo not guess", fillcolor="#FDE2E2", color="#B03A3A"];
+ root -> a; root -> b; root -> c; root -> d; root -> e;
+ pa [label="done in P1", shape=note, fillcolor="#F4F4F4", color="#888888"];
+ pb [label="done in P1", shape=note, fillcolor="#F4F4F4", color="#888888"];
+ pc [label="done in P2", shape=note, fillcolor="#F4F4F4", color="#888888"];
+ pd [label="done in P2", shape=note, fillcolor="#F4F4F4", color="#888888"];
+ pe [label="rules in P1 and P2", shape=note, fillcolor="#F4F4F4", color="#888888"];
+ a -> pa; b -> pb; c -> pc; d -> pd; e -> pe;
+}

@@ -1,0 +1,14 @@
+digraph G { graph [fontname="Helvetica", rankdir=TB, pad=0.2, nodesep=0.35, ranksep=0.45, dpi=170]; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#EEF3FB", color="#3B5B9A", penwidth=1.2]; edge [fontname="Helvetica", fontsize=9, color="#555555"];
+ user [label="User enters\nlanguage, code, error message", fillcolor="#FFF4D6", color="#B8860B"];
+ fill [label="Fill template variables\n{language} {code} {error}"];
+ p1 [label="P1  Input check + diagnosis\n(temperature 0.0, 3 examples)\nreturns JSON", fillcolor="#DDEBFF"];
+ dec [label="status = ok ?", shape=diamond, fillcolor="#FFFFFF"];
+ ask [label="Ask user for the missing code/error\nor say input is not code\n(no fix is written)", fillcolor="#FDE2E2", color="#B03A3A"];
+ p2 [label="P2  Fix + simple explanation\n(temperature 0.2, 1 example)\ngets P1 diagnosis as {diagnosis}", fillcolor="#DDEBFF"];
+ parse [label="Parse and validate JSON\n(fixed_code, explanation, steps, tip)"];
+ show [label="Show result in the web app", fillcolor="#E2F5E6", color="#2E7D45"];
+ user -> fill -> p1 -> dec;
+ dec -> ask [label="needs_more_info /\nnot_code"];
+ dec -> p2 [label="ok"];
+ p2 -> parse -> show;
+}
