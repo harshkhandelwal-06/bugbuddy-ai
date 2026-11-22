@@ -1,0 +1,32 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef greet(name)\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")\n```\n\nError message: SyntaxError: expected ':'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"SyntaxError\",\n  \"root_cause\": \"The function definition is missing a colon at the end of the line.\",\n  \"fixed_code\": \"def greet(name):\\n    print(\\\"Hello, \\\" + name)\\n\\ngreet(\\\"Anuj\\\")\",\n  \"explanation\": \"In Python, you must end a function definition line with a colon (:) to tell the computer that the function body is about to start. I added the missing colon after the parentheses to fix the syntax error.\",\n  \"steps\": [\n    \"Check the line mentioned in the error message.\",\n    \"Ensure all control structures like 'def', 'if', and 'for' end with a colon.\",\n    \"Verify that the code inside the function is indented correctly.\"\n  ],\n  \"tip\": \"Always double-check that your function and loop headers end with a colon before writing the indented block.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.31,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "SyntaxError",
+  "root_cause": "The function definition is missing a colon at the end of the line.",
+  "fixed_code": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")",
+  "explanation": "In Python, you must end a function definition line with a colon (:) to tell the computer that the function body is about to start. I added the missing colon after the parentheses to fix the syntax error.",
+  "steps": [
+   "Check the line mentioned in the error message.",
+   "Ensure all control structures like 'def', 'if', and 'for' end with a colon.",
+   "Verify that the code inside the function is indented correctly."
+  ],
+  "tip": "Always double-check that your function and loop headers end with a colon before writing the indented block.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.31,
+ "test_id": 6
+}

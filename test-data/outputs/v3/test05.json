@@ -1,0 +1,32 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\nstock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock[item])\n```\n\nError message: KeyError: 'mango'",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"KeyError\",\n  \"root_cause\": \"The dictionary 'stock' does not contain the key 'mango', so trying to access it directly causes an error.\",\n  \"fixed_code\": \"stock = {\\\"apple\\\": 5, \\\"banana\\\": 0}\\nitem = \\\"mango\\\"\\nprint(\\\"Stock left:\\\", stock.get(item, \\\"not in stock\\\"))\",\n  \"explanation\": \"When you try to access a key that isn't in a dictionary, Python raises a KeyError. I replaced the direct access with the .get() method, which allows you to provide a default value if the key is missing instead of crashing the program.\",\n  \"steps\": [\n    \"Check if the key exists in the dictionary before accessing it.\",\n    \"Use the .get() method to handle missing keys gracefully.\",\n    \"Print the dictionary contents if you are unsure what keys are available.\"\n  ],\n  \"tip\": \"Use dictionary.get(key, default_value) whenever you aren't 100% sure the key exists in your dictionary.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.94,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "KeyError",
+  "root_cause": "The dictionary 'stock' does not contain the key 'mango', so trying to access it directly causes an error.",
+  "fixed_code": "stock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock.get(item, \"not in stock\"))",
+  "explanation": "When you try to access a key that isn't in a dictionary, Python raises a KeyError. I replaced the direct access with the .get() method, which allows you to provide a default value if the key is missing instead of crashing the program.",
+  "steps": [
+   "Check if the key exists in the dictionary before accessing it.",
+   "Use the .get() method to handle missing keys gracefully.",
+   "Print the dictionary contents if you are unsure what keys are available."
+  ],
+  "tip": "Use dictionary.get(key, default_value) whenever you aren't 100% sure the key exists in your dictionary.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.94,
+ "test_id": 5
+}

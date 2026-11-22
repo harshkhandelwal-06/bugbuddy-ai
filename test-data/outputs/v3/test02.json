@@ -1,0 +1,32 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ntotal = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", totl)\n```\n\nError message: NameError: name 'totl' is not defined",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"NameError\",\n  \"root_cause\": \"The variable 'totl' was used in the print statement, but the variable defined earlier is named 'total'.\",\n  \"fixed_code\": \"total = 0\\nfor price in [120, 80, 50]:\\n    total = total + price\\nprint(\\\"Total:\\\", total)\",\n  \"explanation\": \"You had a small typo in your print statement where you missed the 'a' in 'total'. Python treats 'totl' and 'total' as two completely different names, so it didn't know what 'totl' was. I corrected the spelling to match the variable you created.\",\n  \"steps\": [\n    \"Check the spelling of your variable names.\",\n    \"Ensure the variable name in your print statement matches the one you defined earlier.\",\n    \"Use your code editor's autocomplete feature to avoid typing errors.\"\n  ],\n  \"tip\": \"If you get a NameError, double-check that the variable name is spelled exactly the same way everywhere it is used.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 2.28,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "NameError",
+  "root_cause": "The variable 'totl' was used in the print statement, but the variable defined earlier is named 'total'.",
+  "fixed_code": "total = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", total)",
+  "explanation": "You had a small typo in your print statement where you missed the 'a' in 'total'. Python treats 'totl' and 'total' as two completely different names, so it didn't know what 'totl' was. I corrected the spelling to match the variable you created.",
+  "steps": [
+   "Check the spelling of your variable names.",
+   "Ensure the variable name in your print statement matches the one you defined earlier.",
+   "Use your code editor's autocomplete feature to avoid typing errors."
+  ],
+  "tip": "If you get a NameError, double-check that the variable name is spelled exactly the same way everywhere it is used.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 2.28,
+ "test_id": 2
+}

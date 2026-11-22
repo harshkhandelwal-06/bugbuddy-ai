@@ -1,0 +1,32 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ncount = 0\nwhile count < 5:\n    print(\"Count is\", count)\n```\n\nError message: No error message. The program never stops and keeps printing.",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"Infinite Loop\",\n  \"root_cause\": \"The variable 'count' is never updated inside the loop, so the condition 'count < 5' remains true forever.\",\n  \"fixed_code\": \"count = 0\\nwhile count < 5:\\n    print(\\\"Count is\\\", count)\\n    count += 1\",\n  \"explanation\": \"Because you didn't change the value of 'count', the computer kept checking if 0 is less than 5, which is always true. I added 'count += 1' to the end of the loop so that 'count' increases by one each time, eventually reaching 5 and stopping the loop.\",\n  \"steps\": [\n    \"Check if your loop condition will ever become false.\",\n    \"Ensure you are modifying the variable used in your condition inside the loop.\",\n    \"Use a print statement inside the loop to track how your variables change.\"\n  ],\n  \"tip\": \"Always make sure your loop has a clear way to finish by updating the condition variable.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.48,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "Infinite Loop",
+  "root_cause": "The variable 'count' is never updated inside the loop, so the condition 'count < 5' remains true forever.",
+  "fixed_code": "count = 0\nwhile count < 5:\n    print(\"Count is\", count)\n    count += 1",
+  "explanation": "Because you didn't change the value of 'count', the computer kept checking if 0 is less than 5, which is always true. I added 'count += 1' to the end of the loop so that 'count' increases by one each time, eventually reaching 5 and stopping the loop.",
+  "steps": [
+   "Check if your loop condition will ever become false.",
+   "Ensure you are modifying the variable used in your condition inside the loop.",
+   "Use a print statement inside the loop to track how your variables change."
+  ],
+  "tip": "Always make sure your loop has a clear way to finish by updating the condition variable.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.48,
+ "test_id": 12
+}

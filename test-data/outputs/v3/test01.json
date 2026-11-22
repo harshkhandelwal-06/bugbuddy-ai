@@ -1,0 +1,32 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\nnumbers = [10, 20, 30]\nprint(numbers[3])\n```\n\nError message: IndexError: list index out of range",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"IndexError\",\n  \"root_cause\": \"The list has 3 items at positions 0, 1, and 2. Attempting to access position 3 is out of bounds because the list is not long enough.\",\n  \"fixed_code\": \"numbers = [10, 20, 30]\\nprint(numbers[2])\",\n  \"explanation\": \"In Python, lists start counting at 0. This means the first item is at index 0, the second at 1, and the third at 2. I changed the index to 2 so that the code accesses the last item in your list.\",\n  \"steps\": [\n    \"Check the length of your list using len(numbers).\",\n    \"Remember that the highest valid index is always the length minus one.\",\n    \"Use a print statement to check the value of your index variable before using it.\"\n  ],\n  \"tip\": \"Always remember that Python lists are 'zero-indexed', meaning the first item is at position 0.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.83,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "IndexError",
+  "root_cause": "The list has 3 items at positions 0, 1, and 2. Attempting to access position 3 is out of bounds because the list is not long enough.",
+  "fixed_code": "numbers = [10, 20, 30]\nprint(numbers[2])",
+  "explanation": "In Python, lists start counting at 0. This means the first item is at index 0, the second at 1, and the third at 2. I changed the index to 2 so that the code accesses the last item in your list.",
+  "steps": [
+   "Check the length of your list using len(numbers).",
+   "Remember that the highest valid index is always the length minus one.",
+   "Use a print statement to check the value of your index variable before using it."
+  ],
+  "tip": "Always remember that Python lists are 'zero-indexed', meaning the first item is at position 0.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.83,
+ "test_id": 1
+}

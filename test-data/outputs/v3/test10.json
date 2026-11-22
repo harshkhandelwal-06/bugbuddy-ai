@@ -1,0 +1,32 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef is_even(n):\n    return n % 2 == 1\n\nprint(is_even(4))\n```\n\nError message: No error message. is_even(4) prints False but it should print True.",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"LogicError\",\n  \"root_cause\": \"The function checks if the remainder of division by 2 is 1, which identifies odd numbers instead of even numbers.\",\n  \"fixed_code\": \"def is_even(n):\\n    return n % 2 == 0\\n\\nprint(is_even(4))\",\n  \"explanation\": \"In programming, the modulo operator (%) gives you the remainder of a division. Even numbers have a remainder of 0 when divided by 2, so I changed the 1 to a 0 to correctly identify them.\",\n  \"steps\": [\n    \"Check the mathematical logic of your condition.\",\n    \"Use a print statement to see what n % 2 actually returns for different numbers.\",\n    \"Verify if your function returns the expected boolean value for both even and odd inputs.\"\n  ],\n  \"tip\": \"When writing functions that return True or False, test them with both expected cases to ensure the logic works in both directions.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.69,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "LogicError",
+  "root_cause": "The function checks if the remainder of division by 2 is 1, which identifies odd numbers instead of even numbers.",
+  "fixed_code": "def is_even(n):\n    return n % 2 == 0\n\nprint(is_even(4))",
+  "explanation": "In programming, the modulo operator (%) gives you the remainder of a division. Even numbers have a remainder of 0 when divided by 2, so I changed the 1 to a 0 to correctly identify them.",
+  "steps": [
+   "Check the mathematical logic of your condition.",
+   "Use a print statement to see what n % 2 actually returns for different numbers.",
+   "Verify if your function returns the expected boolean value for both even and odd inputs."
+  ],
+  "tip": "When writing functions that return True or False, test them with both expected cases to ensure the logic works in both directions.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.69,
+ "test_id": 10
+}

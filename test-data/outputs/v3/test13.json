@@ -1,0 +1,28 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\n\n```\n\nError message: NameError: name 'df' is not defined",
+   "raw": "{\n  \"status\": \"needs_more_info\",\n  \"error_type\": \"\",\n  \"root_cause\": \"\",\n  \"fixed_code\": \"\",\n  \"explanation\": \"\",\n  \"steps\": [],\n  \"tip\": \"\",\n  \"missing_info\": \"The code snippet is empty. Please provide the code you are trying to run so I can see where 'df' is missing or incorrectly defined.\"\n}",
+   "latency_s": 2.3,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "needs_more_info",
+  "error_type": "",
+  "root_cause": "",
+  "fixed_code": "",
+  "explanation": "",
+  "steps": [],
+  "tip": "",
+  "missing_info": "The code snippet is empty. Please provide the code you are trying to run so I can see where 'df' is missing or incorrectly defined."
+ },
+ "json_ok": true,
+ "total_latency_s": 2.3,
+ "test_id": 13
+}

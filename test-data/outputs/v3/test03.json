@@ -1,0 +1,32 @@
+{
+ "version": "v3",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v3",
+   "temperature": 0.2,
+   "user_prompt": "Language: Python\n\nCode:\n```\nname = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + score)\n```\n\nError message: TypeError: can only concatenate str (not \"int\") to str",
+   "raw": "{\n  \"status\": \"ok\",\n  \"error_type\": \"TypeError\",\n  \"root_cause\": \"You are trying to join a string and an integer using the '+' operator, which is not allowed in Python.\",\n  \"fixed_code\": \"name = \\\"Riya\\\"\\nscore = 95\\nprint(\\\"Student \\\" + name + \\\" scored \\\" + str(score))\",\n  \"explanation\": \"In Python, you cannot directly add a number to a piece of text. I used the str() function to convert the number 95 into the text \\\"95\\\" so they can be joined together.\",\n  \"steps\": [\n    \"Identify which variable is a number and which is text.\",\n    \"Use the str() function to convert the number into a string.\",\n    \"Alternatively, use f-strings like f'Student {name} scored {score}' for easier formatting.\"\n  ],\n  \"tip\": \"When combining different data types, always convert numbers to strings first or use f-strings.\",\n  \"missing_info\": \"\"\n}",
+   "latency_s": 1.29,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "error_type": "TypeError",
+  "root_cause": "You are trying to join a string and an integer using the '+' operator, which is not allowed in Python.",
+  "fixed_code": "name = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + str(score))",
+  "explanation": "In Python, you cannot directly add a number to a piece of text. I used the str() function to convert the number 95 into the text \"95\" so they can be joined together.",
+  "steps": [
+   "Identify which variable is a number and which is text.",
+   "Use the str() function to convert the number into a string.",
+   "Alternatively, use f-strings like f'Student {name} scored {score}' for easier formatting."
+  ],
+  "tip": "When combining different data types, always convert numbers to strings first or use f-strings.",
+  "missing_info": ""
+ },
+ "json_ok": true,
+ "total_latency_s": 1.29,
+ "test_id": 3
+}
