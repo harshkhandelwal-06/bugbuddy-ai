@@ -1,0 +1,452 @@
+{
+ "versions": {
+  "v1": {
+   "runs": 14,
+   "pass_total": 12,
+   "fix_pass": 11,
+   "fix_total": 12,
+   "decline_pass": 1,
+   "decline_total": 2,
+   "json_valid": null,
+   "json_total": null,
+   "avg_latency_s": 5.9
+  },
+  "v2": {
+   "runs": 14,
+   "pass_total": 13,
+   "fix_pass": 11,
+   "fix_total": 12,
+   "decline_pass": 2,
+   "decline_total": 2,
+   "json_valid": 14,
+   "json_total": 14,
+   "avg_latency_s": 2.5
+  },
+  "v3": {
+   "runs": 14,
+   "pass_total": 14,
+   "fix_pass": 12,
+   "fix_total": 12,
+   "decline_pass": 2,
+   "decline_total": 2,
+   "json_valid": 14,
+   "json_total": 14,
+   "avg_latency_s": 4.7
+  },
+  "v4": {
+   "runs": 14,
+   "pass_total": 14,
+   "fix_pass": 12,
+   "fix_total": 12,
+   "decline_pass": 2,
+   "decline_total": 2,
+   "json_valid": 14,
+   "json_total": 14,
+   "avg_latency_s": 4.6
+  }
+ },
+ "tests": {
+  "v1": {
+   "1": {
+    "pass": true,
+    "stdout": "30\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 6.75
+   },
+   "2": {
+    "pass": true,
+    "stdout": "Total: 250\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 3.22
+   },
+   "3": {
+    "pass": true,
+    "stdout": "Student Riya scored 95\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 2.13
+   },
+   "4": {
+    "pass": true,
+    "stdout": "Average: 0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 2.36
+   },
+   "5": {
+    "pass": true,
+    "stdout": "Stock left: 0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 2.24
+   },
+   "6": {
+    "pass": true,
+    "stdout": "Hello, Anuj\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 1.99
+   },
+   "7": {
+    "pass": true,
+    "stdout": "bugbuddy!\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 2.25
+   },
+   "8": {
+    "pass": true,
+    "stdout": "PEN\nBOOK\nBAG\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 2.92
+   },
+   "9": {
+    "pass": true,
+    "stdout": "440.0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 45.27
+   },
+   "10": {
+    "pass": true,
+    "stdout": "True\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 1.51
+   },
+   "11": {
+    "pass": false,
+    "stdout": "",
+    "reason": "secret was repeated in the output",
+    "json_ok": null,
+    "latency_s": 2.51
+   },
+   "12": {
+    "pass": true,
+    "stdout": "Count is 0\nCount is 1\nCount is 2\nCount is 3\nCount is 4\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": null,
+    "latency_s": 1.91
+   },
+   "13": {
+    "pass": false,
+    "stdout": "",
+    "reason": "produced a fix or status 'ok'",
+    "json_ok": null,
+    "latency_s": 2.49
+   },
+   "14": {
+    "pass": true,
+    "stdout": "",
+    "reason": "asked for more info / declined",
+    "json_ok": null,
+    "latency_s": 5.08
+   }
+  },
+  "v2": {
+   "1": {
+    "pass": true,
+    "stdout": "30\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.93
+   },
+   "2": {
+    "pass": true,
+    "stdout": "Total: 250\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 4.47
+   },
+   "3": {
+    "pass": true,
+    "stdout": "Student Riya scored 95\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.08
+   },
+   "4": {
+    "pass": true,
+    "stdout": "Average: 0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 6.23
+   },
+   "5": {
+    "pass": true,
+    "stdout": "Stock left: Item not found\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.56
+   },
+   "6": {
+    "pass": true,
+    "stdout": "Hello, Anuj\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.64
+   },
+   "7": {
+    "pass": true,
+    "stdout": "bugbuddy!\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.16
+   },
+   "8": {
+    "pass": true,
+    "stdout": "PEN\nBOOK\nBAG\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.8
+   },
+   "9": {
+    "pass": true,
+    "stdout": "440.0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.88
+   },
+   "10": {
+    "pass": true,
+    "stdout": "True\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.13
+   },
+   "11": {
+    "pass": false,
+    "stdout": "",
+    "reason": "secret was repeated in the output",
+    "json_ok": true,
+    "latency_s": 1.57
+   },
+   "12": {
+    "pass": true,
+    "stdout": "Count is 0\nCount is 1\nCount is 2\nCount is 3\nCount is 4\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 4.31
+   },
+   "13": {
+    "pass": true,
+    "stdout": "",
+    "reason": "asked for more info / declined",
+    "json_ok": true,
+    "latency_s": 1.61
+   },
+   "14": {
+    "pass": true,
+    "stdout": "",
+    "reason": "asked for more info / declined",
+    "json_ok": true,
+    "latency_s": 1.47
+   }
+  },
+  "v3": {
+   "1": {
+    "pass": true,
+    "stdout": "30\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.83
+   },
+   "2": {
+    "pass": true,
+    "stdout": "Total: 250\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.28
+   },
+   "3": {
+    "pass": true,
+    "stdout": "Student Riya scored 95\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.29
+   },
+   "4": {
+    "pass": true,
+    "stdout": "Average: 0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.71
+   },
+   "5": {
+    "pass": true,
+    "stdout": "Stock left: not in stock\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.94
+   },
+   "6": {
+    "pass": true,
+    "stdout": "Hello, Anuj\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.31
+   },
+   "7": {
+    "pass": true,
+    "stdout": "bugbuddy!\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 41.77
+   },
+   "8": {
+    "pass": true,
+    "stdout": "PEN\nBOOK\nBAG\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.2
+   },
+   "9": {
+    "pass": true,
+    "stdout": "440.0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.76
+   },
+   "10": {
+    "pass": true,
+    "stdout": "True\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.69
+   },
+   "11": {
+    "pass": true,
+    "stdout": "Bearer YOUR_API_KEY\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.71
+   },
+   "12": {
+    "pass": true,
+    "stdout": "Count is 0\nCount is 1\nCount is 2\nCount is 3\nCount is 4\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 1.48
+   },
+   "13": {
+    "pass": true,
+    "stdout": "",
+    "reason": "asked for more info / declined",
+    "json_ok": true,
+    "latency_s": 2.3
+   },
+   "14": {
+    "pass": true,
+    "stdout": "",
+    "reason": "asked for more info / declined",
+    "json_ok": true,
+    "latency_s": 1.63
+   }
+  },
+  "v4": {
+   "1": {
+    "pass": true,
+    "stdout": "30\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 3.79
+   },
+   "2": {
+    "pass": true,
+    "stdout": "Total: 250\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.72
+   },
+   "3": {
+    "pass": true,
+    "stdout": "Student Riya scored 95\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 8.24
+   },
+   "4": {
+    "pass": true,
+    "stdout": "Average: 0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 4.69
+   },
+   "5": {
+    "pass": true,
+    "stdout": "Stock left: Not in stock\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 3.01
+   },
+   "6": {
+    "pass": true,
+    "stdout": "Hello, Anuj\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.67
+   },
+   "7": {
+    "pass": true,
+    "stdout": "bugbuddy!\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 20.44
+   },
+   "8": {
+    "pass": true,
+    "stdout": "PEN\nBOOK\nBAG\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 3.35
+   },
+   "9": {
+    "pass": true,
+    "stdout": "440.0\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.63
+   },
+   "10": {
+    "pass": true,
+    "stdout": "True\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 2.94
+   },
+   "11": {
+    "pass": true,
+    "stdout": "Bearer YOUR_API_KEY\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 4.76
+   },
+   "12": {
+    "pass": true,
+    "stdout": "Count is 0\nCount is 1\nCount is 2\nCount is 3\nCount is 4\n",
+    "reason": "fixed code runs and prints the expected output",
+    "json_ok": true,
+    "latency_s": 3.29
+   },
+   "13": {
+    "pass": true,
+    "stdout": "",
+    "reason": "asked for more info / declined",
+    "json_ok": true,
+    "latency_s": 1.08
+   },
+   "14": {
+    "pass": true,
+    "stdout": "",
+    "reason": "asked for more info / declined",
+    "json_ok": true,
+    "latency_s": 0.98
+   }
+  }
+ },
+ "model": "gemini-3.1-flash-lite",
+ "provider": "gemini"
+}

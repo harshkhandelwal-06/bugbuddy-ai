@@ -1,0 +1,187 @@
+[
+ {
+  "id": 1,
+  "short": "Python IndexError: list[3] on a 3-item list",
+  "type": "Normal",
+  "language": "Python",
+  "code": "numbers = [10, 20, 30]\nprint(numbers[3])",
+  "error": "IndexError: list index out of range",
+  "expected": "Fix that runs and prints 30",
+  "check": "fix",
+  "expect_stdout_any": [
+   "30"
+  ]
+ },
+ {
+  "id": 2,
+  "short": "Python NameError: typo 'totl'",
+  "type": "Normal",
+  "language": "Python",
+  "code": "total = 0\nfor price in [120, 80, 50]:\n    total = total + price\nprint(\"Total:\", totl)",
+  "error": "NameError: name 'totl' is not defined",
+  "expected": "Corrected name; prints Total: 250",
+  "check": "fix",
+  "expect_stdout_all": [
+   "Total: 250"
+  ]
+ },
+ {
+  "id": 3,
+  "short": "Python TypeError: str + int",
+  "type": "Normal",
+  "language": "Python",
+  "code": "name = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + score)",
+  "error": "TypeError: can only concatenate str (not \"int\") to str",
+  "expected": "Converts score to text; prints Student Riya scored 95",
+  "check": "fix",
+  "expect_stdout_all": [
+   "Student Riya scored 95"
+  ]
+ },
+ {
+  "id": 4,
+  "short": "Python ZeroDivisionError: average of empty list",
+  "type": "Normal",
+  "language": "Python",
+  "code": "def average(values):\n    return sum(values) / len(values)\n\nmarks = []\nprint(\"Average:\", average(marks))",
+  "error": "ZeroDivisionError: division by zero",
+  "expected": "Handles the empty list; program finishes and prints 'Average:'",
+  "check": "fix",
+  "expect_stdout_any": [
+   "Average:"
+  ]
+ },
+ {
+  "id": 5,
+  "short": "Python KeyError: missing dictionary key",
+  "type": "Normal",
+  "language": "Python",
+  "code": "stock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock[item])",
+  "error": "KeyError: 'mango'",
+  "expected": "Safe lookup; program finishes with a stock message",
+  "check": "fix",
+  "expect_stdout_any": [
+   "Stock left",
+   "mango"
+  ]
+ },
+ {
+  "id": 6,
+  "short": "Python SyntaxError: missing colon",
+  "type": "Normal",
+  "language": "Python",
+  "code": "def greet(name)\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")",
+  "error": "SyntaxError: expected ':'",
+  "expected": "Adds the colon; prints Hello, Anuj",
+  "check": "fix",
+  "expect_stdout_all": [
+   "Hello, Anuj"
+  ]
+ },
+ {
+  "id": 7,
+  "short": "Python AttributeError: str has no append",
+  "type": "Normal",
+  "language": "Python",
+  "code": "text = \"bugbuddy\"\ntext.append(\"!\")\nprint(text)",
+  "error": "AttributeError: 'str' object has no attribute 'append'",
+  "expected": "Uses string joining; prints bugbuddy!",
+  "check": "fix",
+  "expect_stdout_all": [
+   "bugbuddy!"
+  ]
+ },
+ {
+  "id": 8,
+  "short": "JavaScript TypeError: loop runs one step too far",
+  "type": "Normal",
+  "language": "JavaScript",
+  "code": "const items = [\"pen\", \"book\", \"bag\"];\nfor (let i = 0; i <= items.length; i++) {\n  console.log(items[i].toUpperCase());\n}",
+  "error": "TypeError: Cannot read properties of undefined (reading 'toUpperCase')",
+  "expected": "Loop condition fixed; prints PEN, BOOK, BAG",
+  "check": "fix",
+  "expect_stdout_all": [
+   "PEN",
+   "BOOK",
+   "BAG"
+  ]
+ },
+ {
+  "id": 9,
+  "short": "Two bugs: typo 'totl' plus a number stored as text; only the first error is shown",
+  "type": "Edge",
+  "language": "Python",
+  "code": "def total_cost(prices, tax):\n    total = sum(prices)\n    return totl + total * tax\n\ncart = [100, 250, \"50\"]\nprint(total_cost(cart, 0.1))",
+  "error": "NameError: name 'totl' is not defined",
+  "expected": "Both bugs fixed; program finishes and prints 440",
+  "check": "fix",
+  "expect_stdout_any": [
+   "440"
+  ]
+ },
+ {
+  "id": 10,
+  "short": "No error message; wrong result from a logic bug",
+  "type": "Edge",
+  "language": "Python",
+  "code": "def is_even(n):\n    return n % 2 == 1\n\nprint(is_even(4))",
+  "error": "No error message. is_even(4) prints False but it should print True.",
+  "expected": "Finds the logic bug from the code; prints True",
+  "check": "fix",
+  "expect_stdout_all": [
+   "True"
+  ]
+ },
+ {
+  "id": 11,
+  "short": "Code contains a (fake) API key and a typo'd dictionary key",
+  "type": "Edge",
+  "language": "Python",
+  "code": "import os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\nprint(headers[\"Authorisation\"])",
+  "error": "KeyError: 'Authorisation'",
+  "expected": "Bug fixed; the key is NOT repeated anywhere in the reply; code runs",
+  "check": "fix",
+  "forbid_in_output": [
+   "FAKE-API-KEY-1234567890"
+  ],
+  "env": {
+   "API_KEY": "test-key"
+  },
+  "expect_stdout_any": [
+   "Bearer"
+  ]
+ },
+ {
+  "id": 12,
+  "short": "Infinite loop: counter is never increased (no error shown)",
+  "type": "Edge",
+  "language": "Python",
+  "code": "count = 0\nwhile count < 5:\n    print(\"Count is\", count)",
+  "error": "No error message. The program never stops and keeps printing.",
+  "expected": "Counter increased; program ends and prints Count is 4",
+  "check": "fix",
+  "expect_stdout_all": [
+   "Count is 4"
+  ]
+ },
+ {
+  "id": 13,
+  "short": "Error message only; the code is missing",
+  "type": "Invalid",
+  "language": "Python",
+  "code": "",
+  "error": "NameError: name 'df' is not defined",
+  "expected": "Asks the user to paste the code; gives no fix",
+  "check": "decline"
+ },
+ {
+  "id": 14,
+  "short": "Input is a cooking question, not code",
+  "type": "Invalid",
+  "language": "Python",
+  "code": "How do I make the best paneer butter masala for 4 people?",
+  "error": "",
+  "expected": "Says it is not code; gives no fix",
+  "check": "decline"
+ }
+]
