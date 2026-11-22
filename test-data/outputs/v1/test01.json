@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nnumbers = [10, 20, 30]\nprint(numbers[3])\n```\n\nError: IndexError: list index out of range",
+   "raw": "### Likely Cause\nIn Python, lists are **zero-indexed**, meaning the counting starts at `0` instead of `1`. \n\n*   `10` is at index `0`\n*   `20` is at index `1`\n*   `30` is at index `2`\n\nWhen you try to access `numbers[3]`, you are asking Python for the **fourth** item in the list. Since your list only has three items, Python throws an `IndexError` because that position does not exist.\n\n### Suggested Correction\nIf you want to access the last item in the list (`30`), you should use index `2`:\n\n```python\nnumbers = [10, 20, 30]\nprint(numbers[2])\n```\n\n### Explanation\nThink of list indexing like labels on shelves: the first shelf is always labeled `0`, not `1`. Because your list has 3 items, the available indices are `0`, `1`, and `2`. Whenever you try to access an index equal to or higher than the number of items in your list, Python will give you an \"out of range\" error because it can't find anything there.",
+   "latency_s": 6.75,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "fixed_code": "numbers = [10, 20, 30]\nprint(numbers[2])",
+  "explanation": "### Likely Cause\nIn Python, lists are **zero-indexed**, meaning the counting starts at `0` instead of `1`. \n\n*   `10` is at index `0`\n*   `20` is at index `1`\n*   `30` is at index `2`\n\nWhen you try to access `numbers[3]`, you are asking Python for the **fourth** item in the list. Since your list only has three items, Python throws an `IndexError` because that position does not exist.\n\n### Suggested Correction\nIf you want to access the last item in the list (`30`), you should use index `2`:\n\n```python\nnumbers = [10, 20, 30]\nprint(numbers[2])\n```\n\n### Explanation\nThink of list indexing like labels on shelves: the first shelf is always labeled `0`, not `1`. Because your list has 3 items, the available indices are `0`, `1`, and `2`. Whenever you try to access an index equal to or higher than the number of items in your list, Python will give you an \"out of range\" error because it can't find anything there."
+ },
+ "json_ok": null,
+ "total_latency_s": 6.75,
+ "test_id": 1
+}

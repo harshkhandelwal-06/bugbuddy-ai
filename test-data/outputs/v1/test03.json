@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nname = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + score)\n```\n\nError: TypeError: can only concatenate str (not \"int\") to str",
+   "raw": "### The Cause of the Error\nIn Python, the `+` operator is used to join (concatenate) strings together. However, you cannot directly join a **string** (text) and an **integer** (number) using the `+` sign. Python gets confused because it doesn't know if you want to perform addition or join text. In your code, `score` is an integer (`95`), which causes the `TypeError`.\n\n---\n\n### Suggested Fix\nThere are two easy ways to fix this. The most modern and recommended way is to use an **f-string**:\n\n#### Option 1: Using an f-string (Recommended)\nBy putting an `f` before the quotes, you can put variables directly inside curly braces `{}`. Python will automatically convert the number to text for you.\n\n```python\nname = \"Riya\"\nscore = 95\nprint(f\"Student {name} scored {score}\")\n```\n\n#### Option 2: Converting the integer to a string\nIf you want to keep using the `+` operator, you must manually convert the number to a string using the `str()` function.\n\n```python\nname = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + str(score))\n```\n\n---\n\n### Explanation\n*   **What is `str()`?** It is a function that tells Python: \"Take this number and treat it like text.\" Once `95` becomes `\"95\"`, Python is happy to join it with the other pieces of text.\n*   **Why use f-strings?** They are cleaner, easier to read, and you don't have to worry about converting types manually. It is the standard way to format strings in modern Python!",
+   "latency_s": 2.13,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "fixed_code": "name = \"Riya\"\nscore = 95\nprint(f\"Student {name} scored {score}\")",
+  "explanation": "### The Cause of the Error\nIn Python, the `+` operator is used to join (concatenate) strings together. However, you cannot directly join a **string** (text) and an **integer** (number) using the `+` sign. Python gets confused because it doesn't know if you want to perform addition or join text. In your code, `score` is an integer (`95`), which causes the `TypeError`.\n\n---\n\n### Suggested Fix\nThere are two easy ways to fix this. The most modern and recommended way is to use an **f-string**:\n\n#### Option 1: Using an f-string (Recommended)\nBy putting an `f` before the quotes, you can put variables directly inside curly braces `{}`. Python will automatically convert the number to text for you.\n\n```python\nname = \"Riya\"\nscore = 95\nprint(f\"Student {name} scored {score}\")\n```\n\n#### Option 2: Converting the integer to a string\nIf you want to keep using the `+` operator, you must manually convert the number to a string using the `str()` function.\n\n```python\nname = \"Riya\"\nscore = 95\nprint(\"Student \" + name + \" scored \" + str(score))\n```\n\n---\n\n### Explanation\n*   **What is `str()`?** It is a function that tells Python: \"Take this number and treat it like text.\" Once `95` becomes `\"95\"`, Python is happy to join it with the other pieces of text.\n*   **Why use f-strings?** They are cleaner, easier to read, and you don't have to worry about converting types manually. It is the standard way to format strings in modern Python!"
+ },
+ "json_ok": null,
+ "total_latency_s": 2.13,
+ "test_id": 3
+}

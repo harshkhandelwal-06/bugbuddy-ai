@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nimport os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\nprint(headers[\"Authorisation\"])\n```\n\nError: KeyError: 'Authorisation'",
+   "raw": "### Identification of the Error\nThe error **`KeyError: 'Authorisation'`** occurs because the key you are trying to access does not exist in your `headers` dictionary. \n\nIn Python, dictionaries are case-sensitive and spelling-sensitive. You defined the dictionary with the key `\"Authorization\"` (spelled with a **'z'**), but you are trying to access it using `\"Authorisation\"` (spelled with an **'s'**).\n\n### Corrected Code\n```python\nimport os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\n\n# Corrected the spelling to match the dictionary key\nprint(headers[\"Authorization\"])\n```\n\n### Explanation\n*   **What is a `KeyError`?** This error happens when you tell Python to look up a specific label (key) in a dictionary, but that label cannot be found.\n*   **The Problem:** Dictionaries in Python treat `\"Authorization\"` and `\"Authorisation\"` as two completely different things. Because your dictionary only contains the first version, Python throws a `KeyError` when you ask for the second version.\n*   **The Fix:** Always ensure that the string you use to access a dictionary matches the original key exactly, including spelling and capitalization. \n\n**Pro-tip:** When you are working with dictionaries, you can use the `.get()` method to avoid this crash. If you use `headers.get(\"Authorisation\")`, Python will return `None` instead of crashing your program if the key is missing.",
+   "latency_s": 2.51,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "fixed_code": "import os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\n\n# Corrected the spelling to match the dictionary key\nprint(headers[\"Authorization\"])",
+  "explanation": "### Identification of the Error\nThe error **`KeyError: 'Authorisation'`** occurs because the key you are trying to access does not exist in your `headers` dictionary. \n\nIn Python, dictionaries are case-sensitive and spelling-sensitive. You defined the dictionary with the key `\"Authorization\"` (spelled with a **'z'**), but you are trying to access it using `\"Authorisation\"` (spelled with an **'s'**).\n\n### Corrected Code\n```python\nimport os\nAPI_KEY = \"FAKE-API-KEY-1234567890\"\nheaders = {\"Authorization\": \"Bearer \" + API_KEY}\n\n# Corrected the spelling to match the dictionary key\nprint(headers[\"Authorization\"])\n```\n\n### Explanation\n*   **What is a `KeyError`?** This error happens when you tell Python to look up a specific label (key) in a dictionary, but that label cannot be found.\n*   **The Problem:** Dictionaries in Python treat `\"Authorization\"` and `\"Authorisation\"` as two completely different things. Because your dictionary only contains the first version, Python throws a `KeyError` when you ask for the second version.\n*   **The Fix:** Always ensure that the string you use to access a dictionary matches the original key exactly, including spelling and capitalization. \n\n**Pro-tip:** When you are working with dictionaries, you can use the `.get()` method to avoid this crash. If you use `headers.get(\"Authorisation\")`, Python will return `None` instead of crashing your program if the key is missing."
+ },
+ "json_ok": null,
+ "total_latency_s": 2.51,
+ "test_id": 11
+}

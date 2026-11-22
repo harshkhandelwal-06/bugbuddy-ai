@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef greet(name)\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")\n```\n\nError: SyntaxError: expected ':'",
+   "raw": "### The Cause of the Error\nIn Python, whenever you define a function (or use structures like `if`, `for`, or `while`), you **must** end the definition line with a colon (`:`). \n\nYour code is missing the colon after `(name)`, which causes Python to get confused because it doesn't see the formal start of the function body.\n\n---\n\n### The Corrected Code\n```python\ndef greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")\n```\n\n---\n\n### The Fix Explained\n*   **The Colon (`:`):** Think of the colon as a signal to Python that says, \"I am finished writing the header for this function, and the code inside the function starts on the next line.\"\n*   **Indentation:** After you add the colon, make sure the `print` line stays indented (usually 4 spaces or one tab). This tells Python that the `print` statement belongs *inside* the `greet` function.\n\n**Pro-tip:** Whenever you see `SyntaxError: expected ':'`, check the line mentioned in the error message to ensure you haven't forgotten a colon at the end of your `def`, `if`, or `for` statements!",
+   "latency_s": 1.99,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "fixed_code": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")",
+  "explanation": "### The Cause of the Error\nIn Python, whenever you define a function (or use structures like `if`, `for`, or `while`), you **must** end the definition line with a colon (`:`). \n\nYour code is missing the colon after `(name)`, which causes Python to get confused because it doesn't see the formal start of the function body.\n\n---\n\n### The Corrected Code\n```python\ndef greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Anuj\")\n```\n\n---\n\n### The Fix Explained\n*   **The Colon (`:`):** Think of the colon as a signal to Python that says, \"I am finished writing the header for this function, and the code inside the function starts on the next line.\"\n*   **Indentation:** After you add the colon, make sure the `print` line stays indented (usually 4 spaces or one tab). This tells Python that the `print` statement belongs *inside* the `greet` function.\n\n**Pro-tip:** Whenever you see `SyntaxError: expected ':'`, check the line mentioned in the error message to ensure you haven't forgotten a colon at the end of your `def`, `if`, or `for` statements!"
+ },
+ "json_ok": null,
+ "total_latency_s": 1.99,
+ "test_id": 6
+}

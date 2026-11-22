@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nHow do I make the best paneer butter masala for 4 people?\n```\n\nError: (none given)",
+   "raw": "It looks like you have provided a cooking recipe question instead of a programming task! \n\nBecause you aren't providing code for me to debug, I can't help with Python, but I can definitely help you with that recipe!\n\n### Paneer Butter Masala (Serves 4)\n\n**Ingredients:**\n* 250g Paneer (cubed)\n* 3 medium tomatoes (pureed)\n* 1 large onion (finely chopped)\n* 1/2 cup heavy cream\n* 2 tbsp butter\n* 1 tbsp ginger-garlic paste\n* Spices: 1 tsp Kashmiri chili powder, 1/2 tsp turmeric, 1 tsp garam masala, 1 tsp kasuri methi (dried fenugreek leaves).\n\n**Instructions:**\n1. **Sauté:** Heat butter in a pan. Add onions and cook until soft. Add the ginger-garlic paste and cook for 1 minute.\n2. **Make the base:** Add the tomato puree and chili powder. Cook until the oil starts to separate from the mixture.\n3. **Simmer:** Add a little water (about 1/2 cup) to reach your desired consistency. Add salt, turmeric, and garam masala.\n4. **Finish:** Add the paneer cubes and cream. Simmer for 3–5 minutes. Crush the kasuri methi between your palms and sprinkle it on top before serving.\n\n***\n\n**If you actually have a Python programming question:**\nPlease paste your code and the error message you are receiving. I would be happy to explain what is going wrong and how to fix it!",
+   "latency_s": 5.08,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "no_fix",
+  "fixed_code": "",
+  "explanation": "It looks like you have provided a cooking recipe question instead of a programming task! \n\nBecause you aren't providing code for me to debug, I can't help with Python, but I can definitely help you with that recipe!\n\n### Paneer Butter Masala (Serves 4)\n\n**Ingredients:**\n* 250g Paneer (cubed)\n* 3 medium tomatoes (pureed)\n* 1 large onion (finely chopped)\n* 1/2 cup heavy cream\n* 2 tbsp butter\n* 1 tbsp ginger-garlic paste\n* Spices: 1 tsp Kashmiri chili powder, 1/2 tsp turmeric, 1 tsp garam masala, 1 tsp kasuri methi (dried fenugreek leaves).\n\n**Instructions:**\n1. **Sauté:** Heat butter in a pan. Add onions and cook until soft. Add the ginger-garlic paste and cook for 1 minute.\n2. **Make the base:** Add the tomato puree and chili powder. Cook until the oil starts to separate from the mixture.\n3. **Simmer:** Add a little water (about 1/2 cup) to reach your desired consistency. Add salt, turmeric, and garam masala.\n4. **Finish:** Add the paneer cubes and cream. Simmer for 3–5 minutes. Crush the kasuri methi between your palms and sprinkle it on top before serving.\n\n***\n\n**If you actually have a Python programming question:**\nPlease paste your code and the error message you are receiving. I would be happy to explain what is going wrong and how to fix it!"
+ },
+ "json_ok": null,
+ "total_latency_s": 5.08,
+ "test_id": 14
+}

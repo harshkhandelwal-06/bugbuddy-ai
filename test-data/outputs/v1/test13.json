@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\n\n```\n\nError: NameError: name 'df' is not defined",
+   "raw": "It appears that your code block is empty, which is why I cannot see your specific implementation. However, the error **`NameError: name 'df' is not defined`** is a very common issue in Python, especially when working with data analysis libraries like `pandas`.\n\n### The Likely Cause\nIn Python, a `NameError` means you are trying to use a variable (in this case, `df`) that the computer doesn't recognize yet. This usually happens for one of three reasons:\n\n1.  **You haven't created the variable yet:** You might have forgotten to run the line of code where `df` is defined (e.g., `df = pd.read_csv('file.csv')`).\n2.  **You ran cells out of order:** If you are using a Jupyter Notebook or Google Colab, you might have written the code to define `df` in a cell further down, but you tried to use it in a cell higher up before running the definition.\n3.  **Typos:** You might have named your variable something else (like `data` or `my_df`) but are trying to call it as `df`.\n\n---\n\n### How to Fix It\nTo fix this, ensure you have initialized your variable before using it. A standard example looks like this:\n\n```python\nimport pandas as pd\n\n# 1. You must define the variable first!\ndf = pd.read_csv('your_data_file.csv') \n\n# 2. Now you can safely use it\nprint(df.head()) \n```\n\n### Checklist for you:\n*   **Check the Spelling:** Does your variable name exactly match `df`? (Remember, Python is case-sensitive, so `Df` is different from `df`).\n*   **Check the Order:** If you are in a Notebook, look at the numbers next to your code cells (e.g., `In [1]`). Ensure the cell defining `df` was run *before* the cell where the error occurred.\n*   **Import Library:** Make sure you have `import pandas as pd` at the very top of your script.\n\n**If you would like me to look at your specific code, please paste it into the chat!** I can then tell you exactly where the variable is missing.",
+   "latency_s": 2.49,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "fixed_code": "import pandas as pd\n\n# 1. You must define the variable first!\ndf = pd.read_csv('your_data_file.csv') \n\n# 2. Now you can safely use it\nprint(df.head()) ",
+  "explanation": "It appears that your code block is empty, which is why I cannot see your specific implementation. However, the error **`NameError: name 'df' is not defined`** is a very common issue in Python, especially when working with data analysis libraries like `pandas`.\n\n### The Likely Cause\nIn Python, a `NameError` means you are trying to use a variable (in this case, `df`) that the computer doesn't recognize yet. This usually happens for one of three reasons:\n\n1.  **You haven't created the variable yet:** You might have forgotten to run the line of code where `df` is defined (e.g., `df = pd.read_csv('file.csv')`).\n2.  **You ran cells out of order:** If you are using a Jupyter Notebook or Google Colab, you might have written the code to define `df` in a cell further down, but you tried to use it in a cell higher up before running the definition.\n3.  **Typos:** You might have named your variable something else (like `data` or `my_df`) but are trying to call it as `df`.\n\n---\n\n### How to Fix It\nTo fix this, ensure you have initialized your variable before using it. A standard example looks like this:\n\n```python\nimport pandas as pd\n\n# 1. You must define the variable first!\ndf = pd.read_csv('your_data_file.csv') \n\n# 2. Now you can safely use it\nprint(df.head()) \n```\n\n### Checklist for you:\n*   **Check the Spelling:** Does your variable name exactly match `df`? (Remember, Python is case-sensitive, so `Df` is different from `df`).\n*   **Check the Order:** If you are in a Notebook, look at the numbers next to your code cells (e.g., `In [1]`). Ensure the cell defining `df` was run *before* the cell where the error occurred.\n*   **Import Library:** Make sure you have `import pandas as pd` at the very top of your script.\n\n**If you would like me to look at your specific code, please paste it into the chat!** I can then tell you exactly where the variable is missing."
+ },
+ "json_ok": null,
+ "total_latency_s": 2.49,
+ "test_id": 13
+}

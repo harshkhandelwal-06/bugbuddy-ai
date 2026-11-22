@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\ndef is_even(n):\n    return n % 2 == 1\n\nprint(is_even(4))\n```\n\nError: No error message. is_even(4) prints False but it should print True.",
+   "raw": "### The Issue\nYour code is logically incorrect because of the condition used to check for an even number. \n\nIn programming, the modulo operator (`%`) returns the **remainder** of a division. When you divide an even number by 2, the remainder is **0**, not 1. Your code currently checks if the remainder is 1, which actually checks if a number is **odd**.\n\n### The Fix\nChange the `1` to a `0` in your return statement.\n\n**Corrected Code:**\n```python\ndef is_even(n):\n    return n % 2 == 0\n\nprint(is_even(4)) # This will now return True\n```\n\n### Explanation\n*   **The logic:** Even numbers are perfectly divisible by 2. This means there is \"nothing left over\" (a remainder of 0).\n*   **`n % 2 == 0`**: This asks Python, \"When I divide $n$ by 2, is the remainder 0?\" \n    *   If you input `4`: $4 \\div 2 = 2$ with a remainder of **0**. Since $0 == 0$ is true, the function returns `True`.\n    *   If you input `5`: $5 \\div 2 = 2$ with a remainder of **1**. Since $1 == 0$ is false, the function returns `False`.",
+   "latency_s": 1.51,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "fixed_code": "def is_even(n):\n    return n % 2 == 0\n\nprint(is_even(4)) # This will now return True",
+  "explanation": "### The Issue\nYour code is logically incorrect because of the condition used to check for an even number. \n\nIn programming, the modulo operator (`%`) returns the **remainder** of a division. When you divide an even number by 2, the remainder is **0**, not 1. Your code currently checks if the remainder is 1, which actually checks if a number is **odd**.\n\n### The Fix\nChange the `1` to a `0` in your return statement.\n\n**Corrected Code:**\n```python\ndef is_even(n):\n    return n % 2 == 0\n\nprint(is_even(4)) # This will now return True\n```\n\n### Explanation\n*   **The logic:** Even numbers are perfectly divisible by 2. This means there is \"nothing left over\" (a remainder of 0).\n*   **`n % 2 == 0`**: This asks Python, \"When I divide $n$ by 2, is the remainder 0?\" \n    *   If you input `4`: $4 \\div 2 = 2$ with a remainder of **0**. Since $0 == 0$ is true, the function returns `True`.\n    *   If you input `5`: $5 \\div 2 = 2$ with a remainder of **1**. Since $1 == 0$ is false, the function returns `False`."
+ },
+ "json_ok": null,
+ "total_latency_s": 1.51,
+ "test_id": 10
+}

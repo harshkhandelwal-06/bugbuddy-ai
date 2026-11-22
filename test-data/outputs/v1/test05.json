@@ -1,0 +1,23 @@
+{
+ "version": "v1",
+ "language": "Python",
+ "steps": [
+  {
+   "prompt_id": "v1",
+   "temperature": null,
+   "user_prompt": "Language: Python\n\nCode:\n```\nstock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\nprint(\"Stock left:\", stock[item])\n```\n\nError: KeyError: 'mango'",
+   "raw": "### Cause of the Error\nThe error **`KeyError: 'mango'`** occurs because you are trying to access a key in your dictionary (`stock`) that does not exist. \n\nIn Python, when you use the `stock[item]` syntax, Python looks for the exact key in the dictionary. Since `\"mango\"` was never added to the `stock` dictionary, Python raises a `KeyError` because it doesn't know what value to return for that item.\n\n---\n\n### Suggested Fix\nTo avoid this error, you can use the `.get()` method. This method allows you to provide a default value (like `0`) if the key isn't found, instead of crashing the program.\n\n```python\nstock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\n\n# Use .get(key, default_value)\nprint(\"Stock left:\", stock.get(item, 0))\n```\n\n---\n\n### Explanation\n1.  **What is `KeyError`?** Think of a dictionary like a physical index. If you look for a page number that isn't listed in the index, you get an error. That is what `KeyError` is—Python is telling you, \"I looked for 'mango', but I couldn't find it anywhere in this dictionary!\"\n2.  **Why use `.get()`?** The `.get()` method is a safer way to look up items. If the key exists, it gives you the value. If the key *doesn't* exist, it returns `None` (or a default value you choose, like `0`) rather than stopping your program with an error. \n\n**Pro-tip:** If you ever need to check if an item exists before accessing it, you can also use an `if` statement:\n```python\nif item in stock:\n    print(\"Stock left:\", stock[item])\nelse:\n    print(f\"{item} is not in stock.\")\n```",
+   "latency_s": 2.24,
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite"
+  }
+ ],
+ "parsed": {
+  "status": "ok",
+  "fixed_code": "stock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\n\n# Use .get(key, default_value)\nprint(\"Stock left:\", stock.get(item, 0))",
+  "explanation": "### Cause of the Error\nThe error **`KeyError: 'mango'`** occurs because you are trying to access a key in your dictionary (`stock`) that does not exist. \n\nIn Python, when you use the `stock[item]` syntax, Python looks for the exact key in the dictionary. Since `\"mango\"` was never added to the `stock` dictionary, Python raises a `KeyError` because it doesn't know what value to return for that item.\n\n---\n\n### Suggested Fix\nTo avoid this error, you can use the `.get()` method. This method allows you to provide a default value (like `0`) if the key isn't found, instead of crashing the program.\n\n```python\nstock = {\"apple\": 5, \"banana\": 0}\nitem = \"mango\"\n\n# Use .get(key, default_value)\nprint(\"Stock left:\", stock.get(item, 0))\n```\n\n---\n\n### Explanation\n1.  **What is `KeyError`?** Think of a dictionary like a physical index. If you look for a page number that isn't listed in the index, you get an error. That is what `KeyError` is—Python is telling you, \"I looked for 'mango', but I couldn't find it anywhere in this dictionary!\"\n2.  **Why use `.get()`?** The `.get()` method is a safer way to look up items. If the key exists, it gives you the value. If the key *doesn't* exist, it returns `None` (or a default value you choose, like `0`) rather than stopping your program with an error. \n\n**Pro-tip:** If you ever need to check if an item exists before accessing it, you can also use an `if` statement:\n```python\nif item in stock:\n    print(\"Stock left:\", stock[item])\nelse:\n    print(f\"{item} is not in stock.\")\n```"
+ },
+ "json_ok": null,
+ "total_latency_s": 2.24,
+ "test_id": 5
+}
